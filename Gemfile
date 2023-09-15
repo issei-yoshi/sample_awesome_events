@@ -48,6 +48,8 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-rails'
 
+gem 'hamlit-rails'
+
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
