@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 
     if @event.save
       redirect_to @event, notice: "作成しました", status: :unprocessable_entity
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
