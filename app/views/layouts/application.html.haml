@@ -13,8 +13,12 @@
       .container
         = link_to "Awesome events", root_path, class: "navbar-brand mr-auto"
         %ul.navbar-nav
-          %li.nav-item
-            = button_to "GitHubログイン", "/auth/github", class: "nav-link", method: :post, data: { turbo: false }
+          - if logged_in?
+            %li.nav-item
+              = button_to "ログアウト", logout_path, class: "nav-link", method: :delete, data: { turbo: false }
+          - else
+            %li.nav-item
+              = button_to "GitHubログイン", "/auth/github", class: "nav-link", method: :post, data: { turbo: false }
   .container
     - if flash.notice
       .alert.alert-success
